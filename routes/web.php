@@ -21,6 +21,10 @@ Route::get('/', function () {
 //     'uses' => 'UserController@postSignUp',
 //     'as' => 'signUp'
 //     ]);
+//  Group ma yo duita sangai hunu parrney raixa ...
+//      Route::get('/', function () {
+//      return view('pages.index');
+//      });
 // }
 // );
 
