@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('pages.index');
 });
+
+// Route::group(
+// ['middleware' => ['web']],function(){
+//     Route::post("/signUp",[
+//     'uses' => 'UserController@postSignUp',
+//     'as' => 'signUp'
+//     ]);
+// }
+// );
+
+// Mathi ko satta mero version ...
+Route::post(
+"/signUp",
+"UserController@postSignUp"
+)->name("signUp");

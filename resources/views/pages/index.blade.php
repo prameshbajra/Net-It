@@ -40,7 +40,7 @@
         <div class="col-sm-6">
             <h3><span class="label label-info">Sign Up</span></h3>
             <br><br>
-            <form class="form-horizontal" action="#" method="post">
+            <form class="form-horizontal" action="{{ route('signUp') }}" method="post">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
