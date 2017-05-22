@@ -12,12 +12,14 @@ class UserController extends Controller
     public function index(){
         return view("pages.index");
     }
+    
     public function postSignUp(Request $req){
-        $this->validate($req,[
-        "email" => "email|required|unique:users",
-        "name" => "required|max:200",
-        "password" => "required|min:8"
-        ]);
+        // $this->validate($req,[
+        // "email" => "email|required|unique:users",
+        // "name" => "required|max:200",
+        // "password" => "required|min:4"
+        // ]);
+        //    This was working earlier but now no ... use js insted of this ....
         
         $email = $req['emailSignUp'];
         $name = $req['nameSignUp'];
@@ -32,10 +34,11 @@ class UserController extends Controller
         return view("pages.dashboard");
     }
     public function postSignIn(Request $req){
-        $this->validate($req,[
-        "email" => "required",
-        "password" => "required"
-        ]);
+        // This was working earlier but now no ... use js insted of this ....
+        // $this->validate($req,[
+        // "email" => "required",
+        // "password" => "required"
+        // ]);
         
         $email = $req['emailSignIn'];
         $pass = $req['passSignIn'];

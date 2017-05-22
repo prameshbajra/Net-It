@@ -28,3 +28,4 @@
 Route::get("/","UserController@index");
 Route::post("/signUp","UserController@postSignUp")->name("signUp");
 Route::post("/signIn","UserController@postSignIn")->name("signIn");
+Route::post("/createPost","PostController@postCreate")->name("postCreate");

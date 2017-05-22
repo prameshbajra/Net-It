@@ -3,9 +3,7 @@
 @section("title","Sign In or Up")
 <div class="container">
     <br><br><br><br><br>
-    {{--
-        Make .js file insted of this ...
-        
+    {{-- Make a js file for this ...         
          @if(count($error->all()) > 0 )
         <div class="alert alert-danger">
             <ul>
@@ -14,7 +12,7 @@
             @endforeach
             </ul>
         </div>
-    @endif --}}
+    @endif  --}}
     <br><br>
     <div class="row">
         <div class="col-sm-6">
