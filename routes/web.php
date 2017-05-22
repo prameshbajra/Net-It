@@ -10,11 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('pages.index');
-});
-
 // Route::group(
 // ['middleware' => ['web']],function(){
 //     Route::post("/signUp",[
@@ -29,5 +24,7 @@ Route::get('/', function () {
 // );
 
 // Mathi ko satta mero version ...
+
+Route::get("/","UserController@index");
 Route::post("/signUp","UserController@postSignUp")->name("signUp");
-Route::post("/signUp","UserController@postSignIn")->name("signIn");
+Route::post("/signIn","UserController@postSignIn")->name("signIn");

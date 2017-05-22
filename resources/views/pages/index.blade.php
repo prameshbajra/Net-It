@@ -2,7 +2,20 @@
 
 @section("title","Sign In or Up")
 <div class="container">
-    <br><br><br><br><br><br><br>
+    <br><br><br><br><br>
+    {{--
+        Make .js file insted of this ...
+        
+         @if(count($error->all()) > 0 )
+        <div class="alert alert-danger">
+            <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+            </ul>
+        </div>
+    @endif --}}
+    <br><br>
     <div class="row">
         <div class="col-sm-6">
             <h3><span class="label label-success">Sign In</span></h3>
