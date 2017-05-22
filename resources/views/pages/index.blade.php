@@ -7,18 +7,18 @@
         <div class="col-sm-6">
             <h3><span class="label label-success">Sign In</span></h3>
             <br><br>
-            <form class="form-horizontal" action="#" method="post">
+            <form class="form-horizontal" action="{{ route('signIn') }}" method="post">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-8">
-                        <input type="email" name = "emailSignIn" class="form-control" id="inputEmail3" placeholder="Email">
+                        <input type="email" name = "emailSignIn" class="form-control" id="inputEmail3" placeholder="Email" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
                     <div class="col-sm-8">
-                        <input type="password" name = "passSignIn" class="form-control" id="inputPassword3" placeholder="Password">
+                        <input type="password" name = "passSignIn" class="form-control" id="inputPassword3" placeholder="Password"/>
                     </div>
                 </div>
                 <div class="form-group">

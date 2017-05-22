@@ -29,7 +29,5 @@ Route::get('/', function () {
 // );
 
 // Mathi ko satta mero version ...
-Route::post(
-"/signUp",
-"UserController@postSignUp"
-)->name("signUp");
+Route::post("/signUp","UserController@postSignUp")->name("signUp");
+Route::post("/signUp","UserController@postSignIn")->name("signIn");
