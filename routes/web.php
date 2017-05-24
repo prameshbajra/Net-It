@@ -33,3 +33,5 @@ Route::get("/logout","Usercontroller@logOut")->name("logout");
 Route::get("/dashBoard","PostController@dashBoard")->name("dashBoard");
 Route::post("/createPost","PostController@postCreate")->name("postCreate");
 Route::get("/deletePost/{id}","PostController@deletePost")->name("postDelete");
+Route::get("/editPost/{id}","PostController@editPost")->name("editPost");
+Route::post("/editing/{id}","PostController@editFixed")->name("editFixed");

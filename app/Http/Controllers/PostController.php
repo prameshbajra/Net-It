@@ -28,4 +28,13 @@ class PostController extends Controller
         $postSelected->delete();
         return redirect()->route("dashBoard");
     }
+    public function editPost($id){
+        return view("pages.editPost",compact("id"));
+    }
+    public function editFixed(Request $req,$id){
+        $newPost = Post::find($id);
+        $newPost->post = $req->editedPost;
+        $newPost->save();
+        return redirect()->route("dashBoard");
+    }
 }

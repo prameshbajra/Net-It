@@ -58,35 +58,13 @@
                     <a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like </a> |
                     @if(Auth::user() == $post->user)
                     <a href="{{route("postDelete",['id'=>$post->id])}}"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Delete </a> |
-                    <a onclick = "editPostLink()" class = "edit" href="#"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Edit </a> |
+                    <a href="{{route("editPost",['id'=>$post->id])}}"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Edit </a> |
                     @endif
                     <a href="#"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Whattt? </a> 
                 </div>
             </div>
         </div>
         @endforeach
-        <div class="modal fade" id = "editModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Edit Post</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action = "" method = "post">
-                            {{csrf_filed()}}
-                            <div class="form-group">
-                                <textarea class = "form-control" name="newPost" rows="4"></textarea>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        <button id = "savePost" type="button" class="btn btn-info">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <br><br><br>
 @endsection
