@@ -51,12 +51,14 @@
                 <p class="card-text">{{$post -> post}}</p>
             </div>
             <div class="row">
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                     <h6>Posted on :: {{$post->created_at}} by {{$post->user->name}}</h6>
                 </div>
-                <div class="col-sm-3 pull-right">
+                <div class="col-sm-4 pull-right">
                     <a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like </a> |
-                    <a href="{{route("postDelete",['id'=>$post->id])}}"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Yuck </a> |
+                    @if(Auth::user() == $post->user)
+                    <a href="{{route("postDelete",['id'=>$post->id])}}"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Delete </a> |
+                    @endif
                     <a href="#"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Ummm </a> |
                     <a href="#"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Whattt? </a> 
                 </div>

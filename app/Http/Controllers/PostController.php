@@ -22,6 +22,9 @@ class PostController extends Controller
     }
     public function deletePost($id){
         $postSelected = Post::find($id)->first();
+        if(Auth::user() != $postSelected->user){
+            return redirect()->back();
+        }
         $postSelected->delete();
         return redirect()->route("dashBoard");
     }
