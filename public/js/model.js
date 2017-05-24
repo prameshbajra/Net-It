@@ -1,0 +1,3 @@
+let editPostLink = () => {
+    $('#editModal').modal();
+}
