@@ -31,7 +31,7 @@ class UserController extends Controller
         $user->password = $pass;
         $user->save();
         Auth::login($user);
-        return view("pages.dashboard");
+        return redirect()->route("dashBoard");
     }
     public function postSignIn(Request $req){
         // This was working earlier but now no ... use js insted of this ....
@@ -43,9 +43,13 @@ class UserController extends Controller
         $email = $req['emailSignIn'];
         $pass = $req['passSignIn'];
         if(Auth::attempt(['email'=>$email,'password'=>$pass])){
-            return view("pages.dashboard");
+            return redirect()->route("dashBoard");
         }else{
             return "Password Not Correct !! Please check!!";
         }
+    }
+    public function logOut(){
+        Auth::logout();
+        return redirect()->route("home");
     }
 }

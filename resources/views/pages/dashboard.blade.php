@@ -4,8 +4,9 @@
 
 @section("body")
     <div class="container">
-        <div class="row">
+       <div class="row">
             <div class="jumbotron">
+                <a href= "{{route('logout')}}" class = "btn btn-danger pull-right" style="margin-top:-30px;">Log Out</a>
                 <h2>Hey there,Welcome to the dashboard</h2>
                 <h5>What's on your mind today? </h5>
                 <br>
@@ -41,22 +42,26 @@
                 <div class="col-sm-4"></div>
             </div>
         </div>
-        <br><br><br>
-        <hr style = "border-top: 3px double #aaa;">
+        <br>
+        @foreach($posts as $post)
+        <hr style = "border-top: 3px double #ddd;">
         <div class="card text-left">
             <div class="card-block">
-                <h4 class="card-title">Special title treatment</h4>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                {{-- <h4 class="card-title">Special title treatment</h4> --}}
+                <p class="card-text">{{$post -> post}}</p>
             </div>
-            <div class="info">
-                Posted on :: Suzal lai tha xa !!
-            </div><br>
-            <div class="interaction">
-                <a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like </a> |
-                <a href="#"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Yuck </a> |
-                <a href="#"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Ummm </a> |
-                <a href="#"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Whattt? </a> 
+            <div class="row">
+                <div class="col-sm-9">
+                    <h6>Posted on :: {{$post->created_at}} by {{$post->user->name}}</h6>
+                </div>
+                <div class="col-sm-3 pull-right">
+                    <a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like </a> |
+                    <a href="{{route("postDelete",['id'=>$post->id])}}"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Yuck </a> |
+                    <a href="#"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Ummm </a> |
+                    <a href="#"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Whattt? </a> 
+                </div>
             </div>
-        </div><hr style = "border-top: 3px double #aaa;">
+        </div>
+        @endforeach
     </div>
 @endsection

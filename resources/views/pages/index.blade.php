@@ -2,7 +2,6 @@
 
 @section("title","Sign In or Up")
 <div class="container">
-    <br><br><br><br><br>
     {{-- Make a js file for this ...         
          @if(count($error->all()) > 0 )
         <div class="alert alert-danger">
@@ -89,7 +88,7 @@
         </div>
     </div>
     <div class="jumbotron">
-        <h1>This is a demo from a tuto ...</h1>
+        <h1>This is supposed to be a social networking app.</h1>
         <p>Making a laravel app</p>
     </div>
 </div>

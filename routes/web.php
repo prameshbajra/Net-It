@@ -25,7 +25,11 @@
 
 // Mathi ko satta mero version ...
 
-Route::get("/","UserController@index");
+Route::get("/","UserController@index")->name("home");
 Route::post("/signUp","UserController@postSignUp")->name("signUp");
 Route::post("/signIn","UserController@postSignIn")->name("signIn");
+Route::get("/logout","Usercontroller@logOut")->name("logout");
+
+Route::get("/dashBoard","PostController@dashBoard")->name("dashBoard");
 Route::post("/createPost","PostController@postCreate")->name("postCreate");
+Route::get("/deletePost/{id}","PostController@deletePost")->name("postDelete");
