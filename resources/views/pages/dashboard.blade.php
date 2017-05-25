@@ -7,6 +7,7 @@
        <div class="row">
             <div class="jumbotron">
                 <a href= "{{route('logout')}}" class = "btn btn-danger pull-right" style="margin-top:-30px;">Log Out</a>
+                <a href= "{{route('accountPage')}}" class = "btn btn-info pull-right" style="margin-top:-30px;margin-right:30px;">Account</a>
                 <h2>Hey there,Welcome to the dashboard</h2>
                 <h5>What's on your mind today? </h5>
                 <br>

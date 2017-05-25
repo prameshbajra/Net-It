@@ -28,6 +28,7 @@
 Route::get("/","UserController@index")->name("home");
 Route::post("/signUp","UserController@postSignUp")->name("signUp");
 Route::post("/signIn","UserController@postSignIn")->name("signIn");
+Route::get("/account","Usercontroller@accountPage")->name("accountPage");
 Route::get("/logout","Usercontroller@logOut")->name("logout");
 
 Route::get("/dashBoard","PostController@dashBoard")->name("dashBoard");

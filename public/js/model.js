@@ -1,3 +1,0 @@
-let editPostLink = () => {
-    $('#editModal').modal();
-}

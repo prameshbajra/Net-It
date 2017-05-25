@@ -48,8 +48,16 @@ class UserController extends Controller
             return "Password Not Correct !! Please check!!";
         }
     }
+    public function accountPage(){
+        if(Auth::user()){
+            return view("pages.account");
+        }else{
+            return "I have a strong feeling you are trying something fishy.";
+        }
+    }
     public function logOut(){
         Auth::logout();
         return redirect()->route("home");
     }
+    
 }

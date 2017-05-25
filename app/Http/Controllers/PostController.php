@@ -29,7 +29,12 @@ class PostController extends Controller
         return redirect()->route("dashBoard");
     }
     public function editPost($id){
-        return view("pages.editPost",compact("id"));
+        $postSelected = Post::find($id)->first();
+        if(Auth::user() == $postSelected->user){
+            return view("pages.editPost",compact("id"));
+        }else{
+            return "We guess you are lost.";
+        }
     }
     public function editFixed(Request $req,$id){
         $newPost = Post::find($id);
