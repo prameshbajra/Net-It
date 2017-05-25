@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 // Dependancy Injection to use Request object used below in parameter of the funtion ...$
+use App\User;
 use Illuminate\Http\Request;
-use App\user;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -50,14 +53,31 @@ class UserController extends Controller
     }
     public function accountPage(){
         if(Auth::user()){
-            return view("pages.account");
+            $user = Auth::user();
+            return view("pages.account",compact('user'));
         }else{
             return "I have a strong feeling you are trying something fishy.";
         }
+    }
+    public function accountSave(Request $req, $id){
+        if(Auth::user()){
+            $user = User::find($id);
+            $user->name = $req->newName;
+            $user->update();
+            $file = $req->file("image");
+            $filename = $req->newName."-".$user->id.".jpg";
+            if($file){
+                Storage::disk("local")->put($filename,File::get($file));
+            }
+            return redirect()->route("accountPage");
+        }
+    }
+    public function accountPicture($filename){
+        $file = Storage::disk("local")->get($filename);
+        return new Response($file,200);
     }
     public function logOut(){
         Auth::logout();
         return redirect()->route("home");
     }
-    
 }
